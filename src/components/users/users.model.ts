@@ -1,29 +1,29 @@
 import mongoose, { Schema } from "mongoose";
 
-const circuitsSchema = new mongoose.Schema(
+const usersSchema = new mongoose.Schema(
   {
     _id: {
       type: Schema.Types.ObjectId,
       required: true,
     },
-    width: {
-      type: Number,
-      required: true,
-    },
-    name: {
+    email: {
       type: String,
       required: true,
     },
-    location: {
-      type: Number,
+    username: {
+      type: String,
       required: true,
     },
-    indoor: {
-      type: Boolean,
+    password: {
+      type: String,
+      required: true,
+    },
+    age: {
+      type: Number,
       required: true,
     },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Circuits", circuitsSchema);
+module.exports = mongoose.model("Users", usersSchema);
