@@ -26,9 +26,11 @@ class RaceController {
      }
 
      public async getRace(req: Request, res: Response) {
-      const { id } = req.params;
+      const { raceId } = req.body;  
+      console.log(raceId);
+          
         try {
-           const race = await RaceRecord.findOne({ _id: mongoose.Types.ObjectId(id) }).lean();
+           const race = await RaceRecord.findOne({ _id: mongoose.Types.ObjectId(raceId) }).lean();
 
            return Helper.createResponse(res, HttpStatus.OK, 'RACE_FETCHED', { race });
         } catch (error) {

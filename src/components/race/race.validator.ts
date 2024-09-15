@@ -18,18 +18,11 @@ class RaceValidator {
 
     public async getRace(req: Request, res: Response, next: NextFunction) {
         const errors = {};
-        const { id } = req.params;
+        const { raceId } = req.body;
+console.log(req.body);
 
-        if (id) {
-            const race = await RaceRecord.findOne({ _id: mongoose.Types.ObjectId(id) }).lean();
-
-            if (!race) {
-                errors["race"] = "RACE_NOT_FOUND";
-            }
-        }
-        else {
+        if (!raceId) {
             errors["race"] = "ID_REQUIRED";
-
         }
 
         Helper.returnErrorOrPassToNext(res, next, errors);

@@ -13,8 +13,8 @@ export default (app: any) => {
         (req, res) => raceController.getRacesList(req, res)
     );
 
-    app.get(
-        '/api/race/:id', 
+    app.post(
+        '/api/race/details', 
         [
             validator.getRace
         ],
