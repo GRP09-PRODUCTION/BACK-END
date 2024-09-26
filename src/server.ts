@@ -6,7 +6,6 @@ config({ path: resolve(`${BASE_PATH}/../.env`) });
 
 import app from './app';
 import { db_connection } from './utils/dbConnection';
-import { mqtt_connection } from './utils/mqttConnection';
 import { logger } from './utils/logger';
 import mongoose from 'mongoose';
 
@@ -20,11 +19,6 @@ db_connection.then(() => {
       logger.info(`Server is running on ${port} with process id ${process.pid}`);
    });
 });
-
-mqtt_connection.on('connect', () => {
-   logger.info('MQTT connected successfully');
- })
-
 
 // Exit handler for server
 function exitHandler() {

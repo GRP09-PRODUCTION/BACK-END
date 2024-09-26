@@ -19,7 +19,6 @@ class RaceValidator {
     public async getRace(req: Request, res: Response, next: NextFunction) {
         const errors = {};
         const { raceId } = req.body;
-console.log(req.body);
 
         if (!raceId) {
             errors["race"] = "ID_REQUIRED";

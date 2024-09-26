@@ -2,7 +2,6 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import { corsObj } from './cors';
 import cookieParser from 'cookie-parser';
-import * as mqtt from 'mqtt';
 
 class Middlewares {
 

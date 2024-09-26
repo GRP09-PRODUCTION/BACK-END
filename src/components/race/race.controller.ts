@@ -27,7 +27,6 @@ class RaceController {
 
      public async getRace(req: Request, res: Response) {
       const { raceId } = req.body;  
-      console.log(raceId);
           
         try {
            const race = await RaceRecord.findOne({ _id: mongoose.Types.ObjectId(raceId) }).lean();
